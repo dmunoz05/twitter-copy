@@ -5,6 +5,7 @@ import {
 } from "@supabase/auth-helpers-nextjs";
 import { GithubIcon } from "./icons";
 import { useRouter } from "next/navigation";
+import { Button } from "@nextui-org/button";
 
 export function AuthButton({ session }: { session: Session | null }) {
   const supabase = createClientComponentClient();
@@ -25,7 +26,7 @@ export function AuthButton({ session }: { session: Session | null }) {
   };
 
   return (
-    <>
+    <div className="w-full flex justify-center">
       <header>
         {session === null && (
           <button
@@ -39,14 +40,11 @@ export function AuthButton({ session }: { session: Session | null }) {
         )}
 
         {session !== null && (
-          <button
-            className="text-white"
-            onClick={handelSignOut}
-          >
+          <Button className="text-white" onClick={handelSignOut}>
             Cerrar sesión
-          </button>
+          </Button>
         )}
       </header>
-    </>
+    </div>
   );
 }

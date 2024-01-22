@@ -16,10 +16,10 @@ export default function PostCard({
   avatarUrl,
   content
 }: {
-  userName: string
-  avatarUrl: string
-  userFullName: string
-  content: string
+  userName: string | null
+  avatarUrl: string | undefined | any
+  userFullName: string | null
+  content: string | null
 }) {
   return (
     <Card className="bg-transparent shadow-none hover:bg-slate-800 transition border-b rounded-none cursor-pointer border-white/20">
